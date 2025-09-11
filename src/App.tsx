@@ -11,6 +11,8 @@ import DashboardLayout from "./components/DashboardLayout";
 import Login from "./pages/Login";
 import TeacherDashboard from "./pages/teacher/TeacherDashboard";
 import StudentPapers from "./pages/teacher/StudentPapers";
+import AIFeedback from "./pages/teacher/AIFeedback"; // New AI Feedback page
+import TeacherSettings from "./pages/teacher/TeacherSettings"; // New Settings page
 import ParentDashboard from "./pages/parent/ParentDashboard";
 import StudentDashboard from "./pages/student/StudentDashboard";
 import NotFound from "./pages/NotFound";
@@ -30,9 +32,9 @@ function DashboardRouter() {
         <Routes>
           <Route path="/dashboard" element={<TeacherDashboard />} />
           <Route path="/papers" element={<StudentPapers />} />
-          <Route path="/feedback" element={<div className="text-center py-12"><h2 className="text-2xl font-bold mb-4">AI Feedback Reports</h2><p className="text-muted-foreground">Coming soon - Comprehensive AI-powered analytics and insights.</p></div>} />
+          <Route path="/feedback" element={<AIFeedback />} />
           <Route path="/students" element={<div className="text-center py-12"><h2 className="text-2xl font-bold mb-4">Students Management</h2><p className="text-muted-foreground">Coming soon - Detailed student profiles and progress tracking.</p></div>} />
-          <Route path="/settings" element={<div className="text-center py-12"><h2 className="text-2xl font-bold mb-4">Settings</h2><p className="text-muted-foreground">Coming soon - Customize your teaching preferences.</p></div>} />
+          <Route path="/settings" element={<TeacherSettings />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       );
